@@ -8,7 +8,7 @@ using System.Windows.Data;
 
 namespace Task6_1
 {
-    public class BoolToYesNoConverter : IValueConverter
+    public class BooleanToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {

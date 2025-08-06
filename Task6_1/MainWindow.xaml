@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="200" Width="300">
     <Window.Resources>
-        <local:BoolToYesNoConverter x:Key="BooleanToVisibilityConverter"/>
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
     <StackPanel Margin="10">
         <TextBox x:Name="TextBox" Text="Введите текст здесь"></TextBox>
@@ -20,7 +20,7 @@
             <Label Content="Показать детали" Grid.Column="1" VerticalAlignment="Center"></Label>
         </Grid>
         <StackPanel Visibility="{Binding ElementName=ChkBox, Path=IsChecked, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
-            <Label Content="Длина текста:"></Label>
+            <TextBlock Text="{Binding ElementName=TextBox, Path=Text.Length, Mode=OneWay, StringFormat='Длина текста: {0}'}"/>
             <ProgressBar x:Name="ProgressBar" Height="15" Margin="5" Maximum="100"
                      Value="{Binding ElementName=TextBox, Path=Text.Length, Mode=OneWay}"></ProgressBar>
         </StackPanel>
